@@ -2,7 +2,6 @@ package ejerciciouno;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -22,30 +21,27 @@ public class Ejercicio1 {
      * @since [1.0.0]
      */
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         Logger logger = Logger.getLogger(Ejercicio1.class.getName());
 
-        ArrayList<Double> numeros = new ArrayList<>();
+        ArrayList<Double> lista = new ArrayList<>();
 
-        logger.log(Level.INFO, "ingrese el dato 1");
-        Double numero1 = scanner.nextDouble();
-        logger.log(Level.INFO, "ingrese el dato 2");
-        Double numero2 = scanner.nextDouble();
+        Double dato1 = 5.0;
+        Double dato2 = 10.0;
 
-        numeros.add(numero1);
-        numeros.add(numero2);
+        lista.add(dato1);
+        lista.add(dato2);
 
-        Collections.sort(numeros);
+        Collections.sort(lista);
 
-        if (numeros.get(0).equals(numeros.get(1))){
-            logger.log(Level.INFO, "los 2 numeros son iguales");
+        if (lista.get(0).equals(lista.get(1))){
+            logger.log(Level.INFO, "los 2 lista son iguales");
         } else {
             logger.log(Level.INFO, """
                             sus datos ordenados son:
                             dato 1:------- {0} -------
                             dato 2:------- {1} -------
                             """,
-                    new Object[]{numeros.get(0), numeros.get(1)});
+                    new Object[]{lista.get(0), lista.get(1)});
         }
     }
 }
