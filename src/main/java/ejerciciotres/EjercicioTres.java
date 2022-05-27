@@ -17,6 +17,7 @@ public class EjercicioTres {
      * indicandole por consola al usuario que indique el radio exacto del circulo]
      *
      * @param args argumentos que recibe por defecto el método principal
+     * @throws NullPointerException exexcepciones predeterminadas
      * @author Miller Esteban Gallego Forero - miller.gallegof@gmail.com
      * @since [1.0.0]
      */
