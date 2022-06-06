@@ -1,4 +1,5 @@
-package ejerciciodieciseis.utilities;
+package ejerciciodieciocho.utilities;
+
 
 /**
  * [Interfaz que extiende de una clase para capturar errores en tiempo de ejecucion]
@@ -9,9 +10,9 @@ package ejerciciodieciseis.utilities;
  */
 public class MyException extends RuntimeException {
 
-
-    public MyException(String message, Exception exception) {
-        super(message, exception);
+    public MyException(String message) {
+        super(message);
     }
+
 
 }
