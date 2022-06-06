@@ -6,6 +6,7 @@ import ejerciciodieciocho.utilities.VideoGame;
 
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 /**
@@ -21,7 +22,6 @@ public class EjercicioDieciocho {
      * [metodo principar el cual contine los diferentes metodos de salida]
      *
      * @param args parametros pro defecto del metdo main
-     *
      * @author Miller Esteban Gallego Forero - miller.gallegof@gmail.com
      * @since [1.0.0]
      */
@@ -53,36 +53,37 @@ public class EjercicioDieciocho {
         listVideoGames.get(4).deliver();
         listVideoGames.get(1).deliver();
 
-        listSeries.forEach(x -> {
-            if (Boolean.TRUE.equals(x.isDelivered())) {
-                mensajes.mostrarSeriesEntregadas(x);
-            }
-        });
+        try {
+            listSeries.forEach(x -> {
+                if (Boolean.TRUE.equals(x.isDelivered())) {
+                    mensajes.mostrarSeriesEntregadas(x);
+                }
+            });
 
-        listVideoGames.forEach(x -> {
-            if (Boolean.TRUE.equals(x.isDelivered())) {
-                mensajes.mostrarJuegosEntregadas(x);
-            }
-        });
+            listVideoGames.forEach(x -> {
+                if (Boolean.TRUE.equals(x.isDelivered())) {
+                    mensajes.mostrarJuegosEntregadas(x);
+                }
+            });
 
-        for (int i = 0; i < listSeries.size(); i++) {
-            if (i == 0) {
-                serie = listSeries.get(i);
-            } else if (i < listSeries.size() - 1) {
-                serie = (Serie) listSeries.get(i).compareTo(serie);
-            } else {
-                mensajes.mostrarSerieMayor(serie.toString());
+            for (int i = 0; i < listSeries.size(); i++) {
+                if (i == 0) {
+                    serie = listSeries.get(i);
+                } else {
+                    serie = (Serie) listSeries.get(i).compareTo(serie);
+                }
             }
-        }
-
-        for (int i = 0; i < listVideoGames.size(); i++) {
-            if (i == 0) {
-                videoGame = listVideoGames.get(i);
-            } else if (i < listVideoGames.size() - 1) {
-                videoGame = (VideoGame) listVideoGames.get(i).compareTo(videoGame);
-            } else {
-                mensajes.mostrarJuegosMayor(videoGame.toString());
+            mensajes.mostrarSerieMayor(Objects.requireNonNull(serie).toString());
+            for (int i = 0; i < listVideoGames.size(); i++) {
+                if (i == 0) {
+                    videoGame = listVideoGames.get(i);
+                } else {
+                    videoGame = (VideoGame) listVideoGames.get(i).compareTo(videoGame);
+                }
             }
+            mensajes.mostrarJuegosMayor(Objects.requireNonNull(videoGame).toString());
+        } catch (Exception e) {
+            mensajes.mostrarExepcion(e.getMessage());
         }
 
     }

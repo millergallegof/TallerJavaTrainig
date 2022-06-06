@@ -28,6 +28,21 @@ public class Mensajes {
     }
 
     /**
+     * [ imprimer el error
+     * <p>
+     * mensaje.mostrarSeriesEntregadas();
+     * ]
+     *
+     * @param mensaje error
+     *
+     * @author Miller Esteban Gallego Forero - miller.gallegof@gmail.com
+     * @since [1.0.0]
+     */
+    public void mostrarExepcion(String mensaje) {
+        loggerMensaje.log(Level.INFO, "Error: {0} ", mensaje);
+    }
+
+    /**
      * [ imprime un atributo especifico de el objeto que es enviado por parametro
      * <p>
      * mensaje.mostrarSeriesEntregadas();
@@ -54,7 +69,7 @@ public class Mensajes {
      * @since [1.0.0]
      */
     public void mostrarJuegosEntregadas(VideoGame videoGame) {
-        loggerMensaje.log(Level.INFO, "la serie entregada es: {0} ", videoGame.getTitle());
+        loggerMensaje.log(Level.INFO, "El video juego entregado es: {0} ", videoGame.getTitle());
     }
 
     /**
